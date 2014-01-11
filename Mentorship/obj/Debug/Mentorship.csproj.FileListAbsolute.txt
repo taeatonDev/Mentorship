@@ -1,0 +1,6 @@
+c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\bin\Debug\Mentorship.exe.config
+c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\bin\Debug\Mentorship.exe
+c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\bin\Debug\Mentorship.pdb
+c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\obj\Debug\Mentorship.csprojResolveAssemblyReference.cache
+c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\obj\Debug\Mentorship.exe
+c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\obj\Debug\Mentorship.pdb
