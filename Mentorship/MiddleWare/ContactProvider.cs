@@ -36,7 +36,7 @@ namespace Mentorship.MiddleWare
                             Parent1 = p1,
                             Parent2 = p2,
                             PropAddress = _getAddressById.GetAddress(id),
-                            Children = _getChildrenById.GetChildNames(id)
+                            //Children = _getChildrenById.GetChildNames(id)
                         };
         }
 
