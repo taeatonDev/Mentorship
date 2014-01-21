@@ -18,6 +18,10 @@ namespace Mentorship.MiddleWare
 
         public ContactProvider()
         {
+            //This configure method can now be moved to the program class. 
+            //I would move it to the top of the Main method so it is called first.
+            //From this you can also see how you will want to call the GetContactProvider Method later on.
+            //Flip back to the Program class.
             FakeDiConfiguration.Configure();
             _getParentsById = FakeDiConfiguration.GetParentRepository();
             _getAddressById = FakeDiConfiguration.GetAddressRepository();

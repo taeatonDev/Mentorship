@@ -18,8 +18,6 @@ namespace Mentorship
         public static AddressRepository GetAddressRepository()
         {
             return _addressRepository;
-
-
         }
 
         public static ChildrenRepository GetChildrenRepository()
@@ -31,5 +29,9 @@ namespace Mentorship
         {
             return _parentRepository;
         }
+
+        //Ok so here we have three repo's being established, but we don't have the contact provider being done. 
+        //From what is here you should be able to easily duplicate what is going on and create a GetContactProvider method.
+        //Flip to the Contact Provider.
     }
 }
