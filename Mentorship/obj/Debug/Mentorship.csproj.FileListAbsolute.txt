@@ -7,6 +7,5 @@ c:\users\andy eaton\documents\visual studio 2013\Projects\Mentorship\Mentorship\
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\bin\Debug\Mentorship.exe.config
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\obj\Debug\Mentorship.exe
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\obj\Debug\Mentorship.pdb
-C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\obj\Debug\Mentorship.csprojResolveAssemblyReference.cache
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\bin\Debug\Mentorship.exe
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\bin\Debug\Mentorship.pdb

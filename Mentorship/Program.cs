@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Mentorship;
 
 namespace Mentorship
 {
@@ -19,6 +20,8 @@ namespace Mentorship
             //I used some of the things we discussed during our mentor meeting on 1/10
             //This is due at the next mentor meeting, or at the very least you should have worked on it and be able to discuss it.
             //The target framework is 4.0 so you should be able to load it. If not let me know and I'll see what I can do.
+
+            FakeDiConfiguration.Configure();
 
             Console.WriteLine("Which function would you like to perform?");
             Console.WriteLine("1. View details for a single contact.");
@@ -82,16 +85,23 @@ namespace Mentorship
             //Below you are declaring your variable with a concrete type and in the same line assigning it to a concrete type.
             //You can save time and space by using the the code item of 'var'. This changes the variable to a non-concrete type
             //until you assign an object to it. It will also help with confusion if you name it what it is. For Example:
-            //var contactProvider = FakeDiProvider.GetContactProvider();
-            Mentorship.MiddleWare.ContactProvider contactID = new Mentorship.MiddleWare.ContactProvider();
+
+            //Mentorship.MiddleWare.ContactProvider contactID = new Mentorship.MiddleWare.ContactProvider();
+            var contactProvider = MiddleWare.ContactProvider.GetContractProvider(); 
 
             //You can also apply the var here as well. The returned object from GetCOntact will define the object type of contact.
-            Mentorship.Backend.Models.Contact contact = contactID.GetContact(id);
+            var contact = contactProvider.GetContact(id);
+            
 
             //This is another standards item. Welcome to the world of string.Format.
             //Here is an example var x = string.Format("Hello my name is {0}. I like to climb on {1}. Can I have a {3}", object.Name, object.TreeType, object.FoodType);
-            Console.WriteLine("Parent1: " + contact.Parent1.FirstName + " " + contact.Parent1.MiddleName + " " + contact.Parent1.LastName);
-            Console.WriteLine("Parent2: " + contact.Parent2.FirstName + " " + contact.Parent2.MiddleName + " " + contact.Parent2.LastName);
+
+            //Console.WriteLine("Parent1: " + contact.Parent1.FirstName + " " + contact.Parent1.MiddleName + " " + contact.Parent1.LastName);
+            //Console.WriteLine("Parent2: " + contact.Parent2.FirstName + " " + contact.Parent2.MiddleName + " " + contact.Parent2.LastName);
+
+            Console.WriteLine(string.Format("Parent1: {0} {1} {2}", contact.Parent1.FirstName, contact.Parent1.MiddleName, contact.Parent1.LastName));
+            Console.WriteLine(string.Format("Parent2: {0} {1} {2}", contact.Parent2.FirstName, contact.Parent2.MiddleName, contact.Parent2.LastName));
+
 
 
             Console.WriteLine(contact.PropAddress.StreetAddress1);
@@ -100,10 +110,11 @@ namespace Mentorship
             //if(string.IsNullorWhiteSpace(contact.PropAddress.StreetAddress2)){positive result}
             //another way that is even less code
             //string.IsNullorWhiteSpace(contact.PropAddress.StreetAddress2) ? Console.WriteLine(positiveResult) : Console.Writeline(negativResult);
-            if (contact.PropAddress.StreetAddress2 != "") { Console.WriteLine(contact.PropAddress.StreetAddress2); };
+            if (!String.IsNullOrWhiteSpace(contact.PropAddress.StreetAddress2)) { Console.WriteLine(contact.PropAddress.StreetAddress2); };
 
             //You can apply the string.Format here again and clean it up a bit.
-            Console.WriteLine(contact.PropAddress.City + ", " + contact.PropAddress.State + "  " + contact.PropAddress.ZipCode);
+            //Console.WriteLine(contact.PropAddress.City + ", " + contact.PropAddress.State + "  " + contact.PropAddress.ZipCode);
+            Console.WriteLine(string.Format("{0}, {1}  {2}",contact.PropAddress.City , contact.PropAddress.State, contact.PropAddress.ZipCode));
             Console.ReadLine();
 
             //Head over to AddressRepo
