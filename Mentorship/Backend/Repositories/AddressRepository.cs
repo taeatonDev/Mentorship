@@ -12,14 +12,9 @@ namespace Mentorship.Backend.Repositories
     {
         public Address GetAddress(ContactId id)
         {
-            //Few things we can do here. By returning the result we don't actually need this line. 
-            //It will save on memory usage and lower the processing time for this method since it doen't have to continue to the end.
-            //Address address = new Address();
-
             switch (id)
             {
                 case 1:
-                    //instead of assigning the new object, just return it.
                     return new Address
                     {
                         StreetAddress1 = "500 NE 43rd St",
@@ -29,7 +24,6 @@ namespace Mentorship.Backend.Repositories
                         ZipCode = 64116
                     };
                 case 2:
-                    //instead of assigning the new object, just return it.
                     return new Address
                     {
                         StreetAddress1 = "600 NE 43rd St",
@@ -39,7 +33,6 @@ namespace Mentorship.Backend.Repositories
                         ZipCode = 64116
                     };
                 default:
-                    //instead of assigning the new object, just return it.
                     return new Address();
             };
 

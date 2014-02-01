@@ -18,11 +18,6 @@ namespace Mentorship.MiddleWare
 
         public ContactProvider()
         {
-            //This configure method can now be moved to the program class. 
-            //I would move it to the top of the Main method so it is called first.
-            //From this you can also see how you will want to call the GetContactProvider Method later on.
-            //Flip back to the Program class.
-
             _getParentsById = FakeDiConfiguration.GetParentRepository();
             _getAddressById = FakeDiConfiguration.GetAddressRepository();
             _getChildrenById = FakeDiConfiguration.GetChildrenRepository();
@@ -45,18 +40,25 @@ namespace Mentorship.MiddleWare
                             Parent1 = p1,
                             Parent2 = p2,
                             PropAddress = _getAddressById.GetAddress(id),
-                            //Children = _getChildrenById.GetChildNames(id)
+                            Children = _getChildrenById.GetChildNames(id)
                         };
         }
 
         public List<Contact> GetAllContacts()
         {
-            throw new NotImplementedException();
+            List<Contact> contacts = new List<Contact>();
+            for (int i = 1; i <= 2; i++)
+            {
+                contacts.Add(GetContact(i));
+            }
+
+            return contacts;
         }
 
         public IQueryable<Contact> GetQueryableContacts()
         {
-            throw new NotImplementedException();
+            List<Contact> contacts = GetAllContacts();
+            return contacts.AsQueryable();
         }
     }
 }

@@ -9,3 +9,4 @@ C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\obj\Debug\Ment
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\obj\Debug\Mentorship.pdb
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\bin\Debug\Mentorship.exe
 C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\bin\Debug\Mentorship.pdb
+C:\Users\Todd\Documents\Mentorship Projects\Mentorship\Mentorship\obj\Debug\Mentorship.csprojResolveAssemblyReference.cache
