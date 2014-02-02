@@ -26,6 +26,10 @@ namespace Mentorship.MiddleWare
         // I actually kind of hate this, but for now it is fine. In the next project we will be implementing Structure Map. Might want to read up on it.
             //RESPONSE
             //On it.  For my own edification and education, why is it you hate this?
+                //RESPONSE
+                //Because this is something that DI (Dependency Injection) should handle. 
+                //And for each class that you would be talking to this with, you would have 
+                //to new up an instance of it, so it is defeating the whole idea of DI.
         public  static ContactProvider  GetContractProvider()
         {
             return new ContactProvider();

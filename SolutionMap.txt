@@ -1,0 +1,46 @@
+Purpose: Define the role that each project has. 
+
+
+<!---------- Data Layer --------------/>
+.Data - Here lives all access to the database and due to this being entity, the entity objects will also live here.
+.Data.Tests - Here lives all the unit tests for the .Data Library
+
+.Objects - Here lives all of the Business Objects, Stongly Typed Objects, View Models and the Translators/Mappers they use to convert between eachother.
+.Objects.Tests - Here lives all the unit tests for the .Objects Library
+
+
+<!---------- Business Layer --------------/>
+.Lib - Here lives all the contracts that we will use in all of the other projects.
+.Lib.Tests - Here lives all of the unit tests for the .Lib Library
+
+.Service - Here lives all of the Providers, Handlers, and Buisness Logic.
+.Service.Tests - Here lives all of the unit tests for the .Services Library
+
+
+<!---------- Presentaton Layer --------------/>
+.Web - This bitch be dumb. Here lives the entire presentation layer and just the presentation layer.
+.Web.Tests - Even a dumb bitch gets tested.
+
+
+
+Map
+
+Web Depends on:
+ - Service for all CRUD functions
+ - Objects for all Objects and Translations of Objects
+ - Lib for any contracts it needs to be aware for for DI.
+
+ Service Depends on:
+ - Data for all interactions with the database
+ - Objects for performing Buisness Logic and rturning objects
+ - Lib for any contracts it needs to fulfill and be aware of for DI.
+
+ Objects Depends on:
+ - Data for the other half of the objects
+ - Lib for any contracts it needs to fulfill and be aware for for DI.
+
+ Data Depends on:
+ - Lib for any contracts it needs to fulfill
+
+ Lib Depends on:
+ - No one.

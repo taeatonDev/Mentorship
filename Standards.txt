@@ -1,0 +1,27 @@
+This is a living document that we will fill out as we work together on this project.
+
+Front End Standards:
+1.) No Inline CSS
+2.) All CSS must end in ;
+3.) No CSS will be references by Element ID
+4.) No On page Javascript - All Javascript will be stored in script files.
+5.) All views will be Stylized for three enviroments: Mobile, Tablet, and Desktop. In that order.
+6.) No Comments unless they are ReSharper TODO comment lines.
+7.) All Pages must be functional in EI8+, Chrome, and FireFox. Fuck Apple, thier users use Chrome or Firefox anyway.
+
+Middle Ware Standards:
+1.) All Methods must be covered with unit tests.
+2.) No Class is to be accessed via class name. Access to a method, should be handled via Dependency Injection and Contracts. (Excepion: private methods that are not used outside of the class.)
+3.) All classes are subject to Topic focus, meaning the IBlowHorses class should not include a method on ButtSexWithPigs.
+4.) Injected items should be prefaced with an underscore. Example (_getSheepToScrewByColor.RetrieveAll(Color.Blue);)
+5.) Internal Variables will be in camelcase with the first word being in lowercase. Example(var sleepsWithDogs = _getPeopleWhoSleepWithDogsByWeekDay.RetrieveAll(Weekday.Tuesday);)
+6.) Class Variables will be in camelcase with first word being in uppercase.
+
+Backend Standards:
+1.) Every Table will have a PK that has te Identity Flag Set to True.
+2.) Forien Keys will be mapped out
+3.) All PK and FK will be indexed.
+4.) Index will only be applied when nessesary to other fields.
+5.) Lookup tables will be shunned and looked upon with disgrace.
+6.) Field Names will be in CamelCase with no spaces or underscored.
+7.) Naming Schemes will be required, Code objects MUST match. Meaning IGTS.Support.Log == IGotTHisShit.Data.Support.Log.cs
