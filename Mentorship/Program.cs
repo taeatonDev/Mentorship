@@ -72,9 +72,22 @@ namespace Mentorship
                             //Before
                             //var contact = contacts.Where(c => c.Parent1.FirstName.ToLower() == searchName.ToLower() || c.Parent2.FirstName.ToLower() == searchName.ToLower());
 
-                            //After implementing String Compare. Research and Explain why doing it this way is better.
+                            //After 
+                            //implementing String Compare. Research and Explain why doing it this way is better.
+                                //RESPONSE
+                                //This code is MUCH cleaner looking for starters.  It's readily apparently in plain English what is going on with it.  
+                                //Also, you can use StringComparison.InvariantCultureIgnoreCase and it will return the correct answer no matter what language you are looking at.
+                                //It's better on the resource usage side because .ToLower creates additional strings in memory to do the operation.  On a small scale like this, not so bad.  
+                                //On a much larger scale, exponentially worse.  Doing this with string.equals even in the small scale creates a standard and also helps to reinforce the 
+                                //idea that this is a better way of doing things.
+
                             //Did you ever step through this and compare how it functions as appose to a List or Enum? 
                             //Also go research Hashset and try to apply it here and see what it does. http://stackoverflow.com/questions/4558754/define-what-is-a-hashset
+                                //RESPONSE
+                                //I didn't step through it to look at the differences.  I know that this method doesn't have much of a resource footprint until you decide to use the variable.
+                                //List and Enum are completely in memory already by the time you'd try to do something like this on them.  Is that what you were trying to get at?
+                                //Hashset looks really interesting.  It's apparently about the fastest way available to do something like this.  I'll look at how to go about implementing it
+                                //and update later.  Wanted to get my own comments back to you before then.
                             var contact = contacts.Where(c => 
                                 String.Equals(c.Parent1.FirstName, searchName, StringComparison.CurrentCultureIgnoreCase) || 
                                 String.Equals(c.Parent2.FirstName, searchName, StringComparison.CurrentCultureIgnoreCase));
@@ -98,6 +111,9 @@ namespace Mentorship
                 //having the catch just throw doesn't accomplish anything. What is it throwing it too? If we were to say... write the 
                 //exception to a Log using Log4Net or NLog and then handle the exception, then this would make since. 
                 //Hint Hint. Look into NLog and Log4Net, we will be implementing them in the next project. Both are top loggers in the industry right now. I prefer Log4Net.
+                    //RESPONSE
+                    //I did this here really because it's habit.  Kind of my own standard, bad or good.  I think I intended to throw a message box so I'd know exactly what the error was,
+                    //but I obviously didn't so it's here really for debug purposes.  I will look into the loggers you mentioned.
             catch (Exception)
             {
 
@@ -118,6 +134,10 @@ namespace Mentorship
             if (!String.IsNullOrWhiteSpace(contact.PropAddress.StreetAddress2)) { Console.WriteLine(contact.PropAddress.StreetAddress2); };
 
             //Did you know that Console.WriteLine functions as string.Format()? I didn't. ReSharper caught this one. Kind of cool.
+                //RESPONSE
+                //I did not know that.  Is this how it was written when you looked this over or did you modify?  Cool and quite convenient.
+                //If it was like this when you were looking at it, I had no idea I even did that.  Happy accident I guess.
+                //I wonder if putting string.Format in the WriteLine causes it to run that code twice?
             Console.WriteLine("{0}, {1}  {2}", contact.PropAddress.City, contact.PropAddress.State, contact.PropAddress.ZipCode);
 
             Console.WriteLine(string.Format("Children"));

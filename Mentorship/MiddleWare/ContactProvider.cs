@@ -24,6 +24,8 @@ namespace Mentorship.MiddleWare
         }
 
         // I actually kind of hate this, but for now it is fine. In the next project we will be implementing Structure Map. Might want to read up on it.
+            //RESPONSE
+            //On it.  For my own edification and education, why is it you hate this?
         public  static ContactProvider  GetContractProvider()
         {
             return new ContactProvider();
@@ -35,6 +37,9 @@ namespace Mentorship.MiddleWare
             Name p2;
 
             //Side Note, only because I don't recall if we discussed it. While this is possible, it is a bad coding practice and is what we call Code Smell. Google that term.
+                //RESPONSE
+                //We talked about code smell.  I think this is a part that you wrote specifically to show me what it might look like and to show what using out parameters looks like.
+                //I wouldn't have done it this way mostly because I didn't know it was possible to do.
             _getParentsById.GetParents(id, out p1, out p2);
 
             return new Contact
@@ -49,6 +54,9 @@ namespace Mentorship.MiddleWare
 
         public List<Contact> GetAllContacts()
         {
+                //RESPONSE
+                //I keep forgetting about the magical variable type of var.  VB doesn't have anything like that so I'm not used to using it.
+                //I'll try my best to keep this in mind.
             //var
             List<Contact> contacts = new List<Contact>();
 

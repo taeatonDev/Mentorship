@@ -13,6 +13,9 @@ namespace Mentorship.Backend.Repositories
         public List<ChildName> GetChildNames(ContactId id)
         {
             //Return a new list and implement the children in the list consructor. Example below in case 3. This will only fill the memory when it is returning something.
+                //RESPONSE
+                //I like that a LOT better.  It's less ugly.  I also didn't consider the potential memory issues doing it the way I did.  I wanted to do this the better way
+                //but my brain sputtered out on me and I couldn't think how to do it because it was a list so I went with what I knew.
             List<ChildName> children = new List<ChildName>();
             switch(id)
             {
