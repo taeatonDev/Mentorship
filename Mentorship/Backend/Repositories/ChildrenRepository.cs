@@ -12,6 +12,7 @@ namespace Mentorship.Backend.Repositories
     {
         public List<ChildName> GetChildNames(ContactId id)
         {
+            //Return a new list and implement the children in the list consructor. Example below in case 3. This will only fill the memory when it is returning something.
             List<ChildName> children = new List<ChildName>();
             switch(id)
             {
@@ -21,11 +22,31 @@ namespace Mentorship.Backend.Repositories
                     children.Add(new ChildName { FirstName = "Ralph", MiddleName = "Wiggum", LastName = "Eaton", Age = 27 });
                     return children;
                 case 2:
+                    //nice
                     children.Add(new ChildName { FirstName = "Dr", MiddleName = "Who", LastName = "Rogers", Age = 1200 });
                     children.Add(new ChildName { FirstName = "Amy", MiddleName = "Pond", LastName = "Rogers", Age = 24 });
                     children.Add(new ChildName { FirstName = "Impossible", MiddleName = "Girl", LastName = "Rogers", Age = 30 });
                     return children;
+                case 3:
+                    return new List<ChildName>
+                    {
+                        new ChildName
+                        {
+                            FirstName = "Dr", 
+                            MiddleName = "Who", 
+                            LastName = "Rogers", 
+                            Age = 1200
+                        },
+                        new ChildName
+                        {
+                            FirstName = "Amy", 
+                            MiddleName = "Pond", 
+                            LastName = "Rogers", 
+                            Age = 24
+                        }
+                    };
                 default:
+                    // try to throw a custom exception here instead and handle it in your contract provder.
                     return children;
             }
         }

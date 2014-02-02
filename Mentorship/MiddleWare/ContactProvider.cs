@@ -23,6 +23,7 @@ namespace Mentorship.MiddleWare
             _getChildrenById = FakeDiConfiguration.GetChildrenRepository();
         }
 
+        // I actually kind of hate this, but for now it is fine. In the next project we will be implementing Structure Map. Might want to read up on it.
         public  static ContactProvider  GetContractProvider()
         {
             return new ContactProvider();
@@ -32,6 +33,8 @@ namespace Mentorship.MiddleWare
         {
             Name p1;
             Name p2;
+
+            //Side Note, only because I don't recall if we discussed it. While this is possible, it is a bad coding practice and is what we call Code Smell. Google that term.
             _getParentsById.GetParents(id, out p1, out p2);
 
             return new Contact
@@ -46,7 +49,10 @@ namespace Mentorship.MiddleWare
 
         public List<Contact> GetAllContacts()
         {
+            //var
             List<Contact> contacts = new List<Contact>();
+
+            //var on int i = 1;
             for (int i = 1; i <= 2; i++)
             {
                 contacts.Add(GetContact(i));
@@ -57,6 +63,7 @@ namespace Mentorship.MiddleWare
 
         public IQueryable<Contact> GetQueryableContacts()
         {
+            //var
             List<Contact> contacts = GetAllContacts();
             return contacts.AsQueryable();
         }

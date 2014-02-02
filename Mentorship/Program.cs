@@ -69,7 +69,15 @@ namespace Mentorship
                             Console.WriteLine("Please enter a first name to search for:");
                             var searchName = Console.ReadLine();
 
-                            var contact = contacts.Where(c => c.Parent1.FirstName.ToLower() == searchName.ToLower() || c.Parent2.FirstName.ToLower() == searchName.ToLower());
+                            //Before
+                            //var contact = contacts.Where(c => c.Parent1.FirstName.ToLower() == searchName.ToLower() || c.Parent2.FirstName.ToLower() == searchName.ToLower());
+
+                            //After implementing String Compare. Research and Explain why doing it this way is better.
+                            //Did you ever step through this and compare how it functions as appose to a List or Enum? 
+                            //Also go research Hashset and try to apply it here and see what it does. http://stackoverflow.com/questions/4558754/define-what-is-a-hashset
+                            var contact = contacts.Where(c => 
+                                String.Equals(c.Parent1.FirstName, searchName, StringComparison.CurrentCultureIgnoreCase) || 
+                                String.Equals(c.Parent2.FirstName, searchName, StringComparison.CurrentCultureIgnoreCase));
 
                             foreach (var con in contact)
                             {
@@ -86,6 +94,10 @@ namespace Mentorship
                         break;
                 };
             }
+                //Because this is happening in the Main method which in this instance is the top level method, 
+                //having the catch just throw doesn't accomplish anything. What is it throwing it too? If we were to say... write the 
+                //exception to a Log using Log4Net or NLog and then handle the exception, then this would make since. 
+                //Hint Hint. Look into NLog and Log4Net, we will be implementing them in the next project. Both are top loggers in the industry right now. I prefer Log4Net.
             catch (Exception)
             {
 
@@ -104,7 +116,9 @@ namespace Mentorship
             Console.WriteLine(string.Format("Parent2: {0} {1} {2}", contact.Parent2.FirstName, contact.Parent2.MiddleName, contact.Parent2.LastName));
             Console.WriteLine(contact.PropAddress.StreetAddress1);
             if (!String.IsNullOrWhiteSpace(contact.PropAddress.StreetAddress2)) { Console.WriteLine(contact.PropAddress.StreetAddress2); };
-            Console.WriteLine(string.Format("{0}, {1}  {2}", contact.PropAddress.City, contact.PropAddress.State, contact.PropAddress.ZipCode));
+
+            //Did you know that Console.WriteLine functions as string.Format()? I didn't. ReSharper caught this one. Kind of cool.
+            Console.WriteLine("{0}, {1}  {2}", contact.PropAddress.City, contact.PropAddress.State, contact.PropAddress.ZipCode);
 
             Console.WriteLine(string.Format("Children"));
             foreach (var child in contact.Children)
