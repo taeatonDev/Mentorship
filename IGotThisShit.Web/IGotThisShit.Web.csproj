@@ -39,7 +39,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="log4net">
+      <HintPath>..\packages\log4net.2.0.3\lib\net40-full\log4net.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="StructureMap">
+      <HintPath>..\packages\structuremap.2.6.4.1\lib\net40\StructureMap.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.Entity" />
@@ -307,6 +313,20 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IGotThisShit.Lib\IGotThisShit.Lib.csproj">
+      <Project>{949e9f87-5db2-40e3-8295-021f7f49826e}</Project>
+      <Name>IGotThisShit.Lib</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGotThisShit.Objects\IGotThisShit.Objects.csproj">
+      <Project>{f701b55f-3b8e-42d5-8356-dac8ab161698}</Project>
+      <Name>IGotThisShit.Objects</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IGotThisShit.Service\IGotThisShit.Service.csproj">
+      <Project>{802fe4ba-96cf-4a43-b112-e5686ee445ee}</Project>
+      <Name>IGotThisShit.Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
