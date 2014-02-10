@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mentorship", "Mentorship\Mentorship.csproj", "{D1136C77-2ABD-4311-A207-80D6AC3BE6D2}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGotThisShit.Lib", "IGotThisShit.Lib\IGotThisShit.Lib.csproj", "{949E9F87-5DB2-40E3-8295-021F7F49826E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IGotThisShit.Objects", "IGotThisShit.Objects\IGotThisShit.Objects.csproj", "{F701B55F-3B8E-42D5-8356-DAC8AB161698}"
@@ -38,10 +36,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{D1136C77-2ABD-4311-A207-80D6AC3BE6D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{D1136C77-2ABD-4311-A207-80D6AC3BE6D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{D1136C77-2ABD-4311-A207-80D6AC3BE6D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{D1136C77-2ABD-4311-A207-80D6AC3BE6D2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{949E9F87-5DB2-40E3-8295-021F7F49826E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{949E9F87-5DB2-40E3-8295-021F7F49826E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{949E9F87-5DB2-40E3-8295-021F7F49826E}.Release|Any CPU.ActiveCfg = Release|Any CPU
