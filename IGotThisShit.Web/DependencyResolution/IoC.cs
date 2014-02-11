@@ -23,7 +23,7 @@ namespace IGotThisShit.Web.DependencyResolution {
         public static IContainer Initialize() {
             ObjectFactory.Initialize(x => x.Scan(scan =>
             {
-                scan.AssemblyContainingType<NestedInheritanceConvention>();
+                scan.AssemblyContainingType<IWebProvier>();
                 scan.TheCallingAssembly();
 
                 scan.Convention<NestedInheritanceConvention>();
@@ -31,7 +31,7 @@ namespace IGotThisShit.Web.DependencyResolution {
 
             Service.Configuration.Configuration.Configure();
 
-            ObjectFactory.AssertConfigurationIsValid();
+           // ObjectFactory.AssertConfigurationIsValid();
 
             return ObjectFactory.Container;
         }
