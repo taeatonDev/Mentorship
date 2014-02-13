@@ -18,6 +18,7 @@
 
 using IGotThisShit.Lib.Configuration;
 using StructureMap;
+
 namespace IGotThisShit.Web.DependencyResolution {
     public static class IoC {
         public static IContainer Initialize() {
@@ -26,12 +27,16 @@ namespace IGotThisShit.Web.DependencyResolution {
                 scan.AssemblyContainingType<IWebProvier>();
                 scan.TheCallingAssembly();
 
+                scan.ExcludeNamespace("IGotThisShit.Web.Controllers");
+
                 scan.Convention<NestedInheritanceConvention>();
             }));
 
-            Service.Configuration.Configuration.Configure();
+            
 
-           // ObjectFactory.AssertConfigurationIsValid();
+            ObjectFactory.AssertConfigurationIsValid();
+
+            Service.Configuration.Configuration.Configure();
 
             return ObjectFactory.Container;
         }

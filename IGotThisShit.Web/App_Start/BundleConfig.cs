@@ -1,4 +1,5 @@
-﻿using System.Web;
+﻿using System.Data.Metadata.Edm;
+using System.Web;
 using System.Web.Optimization;
 
 namespace IGotThisShit.Web
@@ -7,37 +8,54 @@ namespace IGotThisShit.Web
     {
         // For more information on Bundling, visit http://go.microsoft.com/fwlink/?LinkId=254725
         public static void RegisterBundles(BundleCollection bundles)
-        {
-            bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+        {        
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js"));
+            //CSS Bundles
+            bundles.Add(new StyleBundle("~/Content/css").Include(
+                "~/Content/themes/base/jquery.ui.css",
+                "~/Content/themes/base/jquery.ui.accordion.css",
+                "~/Content/themes/base/jquery.ui.all.css",
+                "~/Content/themes/base/jquery.ui.autocomplete.css",
+                "~/Content/themes/base/jquery.ui.base.css",
+                "~/Content/themes/base/jquery.ui.button.css",
+                "~/Content/themes/base/jquery.ui.core.css",
+                "~/Content/themes/base/jquery.ui.datepicker.css",
+                "~/Content/themes/base/jquery.ui.dialog.css",
+                "~/Content/themes/base/jquery.ui.menu.css",
+                "~/Content/themes/base/jquery.ui.progressbar.css",
+                "~/Content/themes/base/jquery.ui.resizable.css",
+                "~/Content/themes/base/jquery.ui.selectable.css",
+                "~/Content/themes/base/jquery.ui.slider.css",
+                "~/Content/themes/base/jquery.ui.spinner.css",
+                "~/Content/themes/base/jquery.ui.tabs.css",
+                "~/Content/themes/base/jquery.ui.theme.css",
+                "~/Content/themes/base/jquery.ui.tooltip.css",
+                "~/Content/bootstrap.css",
+                "~/Content/bootstrap-theme.css",
+                "~/Content/site.css"
+                ));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+            //JS Libraries
+            bundles.Add(new ScriptBundle("~/bundles/JSLib").Include(
+                "~/Scripts/jquery-{version}.min.js",
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/jquery-ui-{version}.js",
+                "~/Scripts/jquery.validate.js",
+                "~/Scripts/jquery.validate.unobtrusive.js",
+                "~/Scripts/knockout-{version}.js",
+                "~/Scripts/modernizr-{version}.js",
+                "~/Scripts/underscore.js"
+                ));
 
-            // Use the development version of Modernizr to develop with and learn from. Then, when you're
-            // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
-            bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+            //JS Head
+            bundles.Add(new ScriptBundle("~/bundles/siteHead").Include(
+                "~/Scripts/siteHead.js"));
 
-            bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
+            //JS Foot
+            bundles.Add(new ScriptBundle("~/bundles/siteFoot").Include(
+                "~/Scripts/siteFoot.js"));
 
-            bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(
-                        "~/Content/themes/base/jquery.ui.core.css",
-                        "~/Content/themes/base/jquery.ui.resizable.css",
-                        "~/Content/themes/base/jquery.ui.selectable.css",
-                        "~/Content/themes/base/jquery.ui.accordion.css",
-                        "~/Content/themes/base/jquery.ui.autocomplete.css",
-                        "~/Content/themes/base/jquery.ui.button.css",
-                        "~/Content/themes/base/jquery.ui.dialog.css",
-                        "~/Content/themes/base/jquery.ui.slider.css",
-                        "~/Content/themes/base/jquery.ui.tabs.css",
-                        "~/Content/themes/base/jquery.ui.datepicker.css",
-                        "~/Content/themes/base/jquery.ui.progressbar.css",
-                        "~/Content/themes/base/jquery.ui.theme.css"));
+            BundleTable.EnableOptimizations = true;
         }
     }
 }

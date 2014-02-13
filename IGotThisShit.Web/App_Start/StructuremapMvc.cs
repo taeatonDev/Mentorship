@@ -17,10 +17,11 @@
 
 using System.Web.Http;
 using System.Web.Mvc;
+using IGotThisShit.Web.App_Start;
 using StructureMap;
 using IGotThisShit.Web.DependencyResolution;
 
-[assembly: WebActivator.PreApplicationStartMethod(typeof(IGotThisShit.Web.App_Start.StructuremapMvc), "Start")]
+[assembly: WebActivator.PreApplicationStartMethod(typeof(StructuremapMvc), "Start")]
 
 namespace IGotThisShit.Web.App_Start {
     public static class StructuremapMvc {
