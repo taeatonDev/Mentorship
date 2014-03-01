@@ -1,4 +1,5 @@
 ﻿using IGotThisShit.Lib.Configuration;
+using IGotThisShit.Service.Providers;
 using log4net;
 using StructureMap;
 using StructureMap.Pipeline;
@@ -20,6 +21,8 @@ namespace IGotThisShit.Service.Configuration
                 conf.For<ILog>()
                     .LifecycleIs(new UniquePerRequestLifecycle())
                     .Use(context => LogManager.GetLogger(context.ParentType ?? typeof(object)));
+
+                conf.For<IDataProvider>().Use<HomeDataProvider>();
             });
             Objects.Configuration.Configuration.Configure();
         }
